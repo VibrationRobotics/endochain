@@ -1,0 +1,94 @@
+/**
+ * ENDOCHAIN-VIDUYA-2025 Global Styles
+ * Viduya Family Legacy Glyph © 2025 – All Rights Reserved
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  body {
+    @apply antialiased text-gray-900 bg-gray-50;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+/* Component utilities */
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 
+           transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 border border-gray-300 text-gray-700 rounded-lg 
+           hover:bg-gray-50 transition-colors;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow p-6;
+  }
+
+  .input {
+    @apply block w-full rounded-md border-gray-300 shadow-sm 
+           focus:border-indigo-500 focus:ring-indigo-500;
+  }
+
+  /* LEI-V stage badges */
+  .badge-healthy {
+    @apply px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium;
+  }
+
+  .badge-stage0 {
+    @apply px-2 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-medium;
+  }
+
+  .badge-advanced {
+    @apply px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-medium;
+  }
+}
+
+/* Animations */
+@layer utilities {
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes glyph-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-glyph {
+    animation: glyph-rotate 20s linear infinite;
+  }
+}
+

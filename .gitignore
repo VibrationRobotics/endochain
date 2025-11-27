@@ -1,0 +1,90 @@
+# ENDOCHAIN-VIDUYA-2025
+# Viduya Family Legacy Glyph (C) 2025 - All Rights Reserved
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments - NEVER COMMIT
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Testing
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+frontend/dist/
+frontend/.vite/
+
+# Patient data (HIPAA - NEVER COMMIT)
+*.edf
+patient_data/
+PHI/
+outputs/*.json
+outputs/*.txt
+outputs/*.pdf
+
+# Logs
+*.log
+logs/
+
+# Type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# Codacy
+.codacy/
+.github/instructions/codacy.instructions.md
+
+# Local secrets
+.env.local
+*.local
+secrets/

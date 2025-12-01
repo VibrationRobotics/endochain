@@ -13,66 +13,7 @@
 End the **10-year diagnostic delay** for **200 million women** suffering from endometriosis worldwide.
 
 ---
-(venv) PS F:\endometriosis> .\venv\Scripts\activate; $env:PYTHONPATH="f:\endometriosis"; python -m pytest tests/test_core_lei_v.py -v --tb=short 2>&1
-================================================================================================== test session starts ===================================================================================================
-platform win32 -- Python 3.11.9, pytest-9.0.1, pluggy-1.6.0 -- F:\endometriosis\venv\Scripts\python.exe
-cachedir: .pytest_cache
-rootdir: F:\endometriosis
-configfile: pyproject.toml
-plugins: anyio-4.11.0, asyncio-1.3.0, cov-7.0.0
-asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
-collected 18 items                                                                                                                                                                                                        
 
-tests/test_core_lei_v.py::TestLEIVThresholds::test_healthy_classification PASSED                                                                                                                                    [  5%] 
-tests/test_core_lei_v.py::TestLEIVThresholds::test_stage_0_classification PASSED                                                                                                                                    [ 11%] 
-tests/test_core_lei_v.py::TestLEIVThresholds::test_advanced_classification PASSED                                                                                                                                   [ 16%] 
-tests/test_core_lei_v.py::TestLEIVCalculator::test_uniform_distances_zero_leiv PASSED                                                                                                                               [ 22%]
-tests/test_core_lei_v.py::TestLEIVCalculator::test_varied_distances_nonzero_leiv PASSED                                                                                                                             [ 27%] 
-tests/test_core_lei_v.py::TestLEIVCalculator::test_result_includes_audit_hash PASSED                                                                                                                                [ 33%] 
-tests/test_core_lei_v.py::TestLEIVCalculator::test_result_includes_symbolic_expression PASSED                                                                                                                       [ 38%] 
-tests/test_core_lei_v.py::TestLEIVCalculator::test_wrong_electrode_count_raises PASSED                                                                                                                              [ 44%] 
-tests/test_core_lei_v.py::TestLEIVCalculator::test_rotation_invariance PASSED                                                                                                                                       [ 50%] 
-tests/test_core_lei_v.py::TestViduyaGlyph::test_total_coordinates PASSED                                                                                                                                            [ 55%]
-tests/test_core_lei_v.py::TestViduyaGlyph::test_rsl_electrode_count PASSED                                                                                                                                          [ 61%] 
-tests/test_core_lei_v.py::TestViduyaGlyph::test_rsl_electrode_indices PASSED                                                                                                                                        [ 66%]
-tests/test_core_lei_v.py::TestViduyaGlyph::test_symmetry_verification PASSED                                                                                                                                        [ 72%]
-tests/test_core_lei_v.py::TestViduyaGlyph::test_triangle_hexagon_coordinates PASSED                                                                                                                                 [ 77%]
-tests/test_core_lei_v.py::TestViduyaGlyph::test_coordinate_to_float PASSED                                                                                                                                          [ 83%]
-tests/test_core_lei_v.py::TestAuditHasher::test_hash_is_256_bits PASSED                                                                                                                                             [ 88%] 
-tests/test_core_lei_v.py::TestAuditHasher::test_hash_determinism PASSED                                                                                                                                             [ 94%] 
-tests/test_core_lei_v.py::TestAuditHasher::test_chain_integrity PASSED                                                                                                                                              [100%] 
-
-=================================================================================================== 18 passed in 0.55s =================================================================================================== 
-.(venv) PS F:\endometriosis> .\venv\Scripts\activate; $env:PYTHONPATH="f:\endometriosis"; python -m pytest tests/test_core_lei_v.py -v --tb=short 2>&1
-================================================================================================== test session starts ===================================================================================================
-platform win32 -- Python 3.11.9, pytest-9.0.1, pluggy-1.6.0 -- F:\endometriosis\venv\Scripts\python.exe
-cachedir: .pytest_cache
-rootdir: F:\endometriosis
-configfile: pyproject.toml
-plugins: anyio-4.11.0, asyncio-1.3.0, cov-7.0.0
-asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
-collected 18 items                                                                                                                                                                                                        
-
-tests/test_core_lei_v.py::TestLEIVThresholds::test_healthy_classification PASSED                                                                                                                                    [  5%] 
-tests/test_core_lei_v.py::TestLEIVThresholds::test_stage_0_classification PASSED                                                                                                                                    [ 11%] 
-tests/test_core_lei_v.py::TestLEIVThresholds::test_advanced_classification PASSED                                                                                                                                   [ 16%] 
-tests/test_core_lei_v.py::TestLEIVCalculator::test_uniform_distances_zero_leiv PASSED                                                                                                                               [ 22%]
-tests/test_core_lei_v.py::TestLEIVCalculator::test_varied_distances_nonzero_leiv PASSED                                                                                                                             [ 27%] 
-tests/test_core_lei_v.py::TestLEIVCalculator::test_result_includes_audit_hash PASSED                                                                                                                                [ 33%] 
-tests/test_core_lei_v.py::TestLEIVCalculator::test_result_includes_symbolic_expression PASSED                                                                                                                       [ 38%] 
-tests/test_core_lei_v.py::TestLEIVCalculator::test_wrong_electrode_count_raises PASSED                                                                                                                              [ 44%] 
-tests/test_core_lei_v.py::TestLEIVCalculator::test_rotation_invariance PASSED                                                                                                                                       [ 50%] 
-tests/test_core_lei_v.py::TestViduyaGlyph::test_total_coordinates PASSED                                                                                                                                            [ 55%]
-tests/test_core_lei_v.py::TestViduyaGlyph::test_rsl_electrode_count PASSED                                                                                                                                          [ 61%] 
-tests/test_core_lei_v.py::TestViduyaGlyph::test_rsl_electrode_indices PASSED                                                                                                                                        [ 66%]
-tests/test_core_lei_v.py::TestViduyaGlyph::test_symmetry_verification PASSED                                                                                                                                        [ 72%]
-tests/test_core_lei_v.py::TestViduyaGlyph::test_triangle_hexagon_coordinates PASSED                                                                                                                                 [ 77%]
-tests/test_core_lei_v.py::TestViduyaGlyph::test_coordinate_to_float PASSED                                                                                                                                          [ 83%]
-tests/test_core_lei_v.py::TestAuditHasher::test_hash_is_256_bits PASSED                                                                                                                                             [ 88%] 
-tests/test_core_lei_v.py::TestAuditHasher::test_hash_determinism PASSED                                                                                                                                             [ 94%] 
-tests/test_core_lei_v.py::TestAuditHasher::test_chain_integrity PASSED                                                                                                                                              [100%] 
-
-=================================================================================================== 18 passed in 0.55s =================================================================================================== 
 ## ⚡ Key Innovation
 
 **LEI-V (Lesion Entropy Index - Viduya variant)** is a novel biomarker derived from the **Viduya Legacy Glyph** – a sacred geometric construction with provable C₃ × D₆ symmetry.

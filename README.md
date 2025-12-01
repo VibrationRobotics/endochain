@@ -1,51 +1,86 @@
-<div align="center">
-
 # ENDOCHAIN-VIDUYA-2025
-
-### 🎯 The 10-Year Wait is Over
-
-[![Version](https://img.shields.io/badge/version-1.0.0--clinical--ready-green.svg)](https://github.com/VibrationRobotics/ENDOCHAIN-VIDUYA-2025/releases/tag/v1.0.0-clinical-ready)
-[![License](https://img.shields.io/badge/license-Proprietary-red.svg)](./LICENSE)
-[![FDA](https://img.shields.io/badge/FDA-510(k)%20Pending-blue.svg)]()
-[![Tests](https://img.shields.io/badge/tests-32%20passed-brightgreen.svg)]()
-[![Python](https://img.shields.io/badge/python-3.11+-blue.svg)]()
-
-**Viduya Family Legacy Glyph (C) 2025 – All Rights Reserved**  
-Creator: Ariel Viduya Manosca | Author: IAMVC Holdings LLC
-
----
 
 **The World's First Geometrically-Anchored, Non-Invasive Endometriosis Diagnostic System**
 
-</div>
+[![CI/CD](https://github.com/endochain/endochain-viduya-2025/workflows/CI/badge.svg)](https://github.com/endochain/endochain-viduya-2025/actions)
+[![Coverage](https://codecov.io/gh/endochain/endochain-viduya-2025/branch/main/graph/badge.svg)](https://codecov.io/gh/endochain/endochain-viduya-2025)
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
 
 ---
 
-## 🚀 What is ENDOCHAIN?
+## 🎯 Mission
 
-ENDOCHAIN is an AI-powered clinical decision support system that detects **Stage-0 endometriosis** using a novel geometric entropy biomarker called **LEI-V** (Lesion Entropy Index - Viduya variant).
-
-| Metric | Before ENDOCHAIN | With ENDOCHAIN |
-|--------|------------------|----------------|
-| Average diagnostic delay | **10 years** | **< 3 minutes** |
-| Detection stage | Stage III-IV (advanced) | **Stage-0** (molecular) |
-| Method | Surgical laparoscopy | Non-invasive EVG |
-| Cost | $15,000+ | ~$500 |
+End the **10-year diagnostic delay** for **200 million women** suffering from endometriosis worldwide.
 
 ---
+(venv) PS F:\endometriosis> .\venv\Scripts\activate; $env:PYTHONPATH="f:\endometriosis"; python -m pytest tests/test_core_lei_v.py -v --tb=short 2>&1
+================================================================================================== test session starts ===================================================================================================
+platform win32 -- Python 3.11.9, pytest-9.0.1, pluggy-1.6.0 -- F:\endometriosis\venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: F:\endometriosis
+configfile: pyproject.toml
+plugins: anyio-4.11.0, asyncio-1.3.0, cov-7.0.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 18 items                                                                                                                                                                                                        
 
+tests/test_core_lei_v.py::TestLEIVThresholds::test_healthy_classification PASSED                                                                                                                                    [  5%] 
+tests/test_core_lei_v.py::TestLEIVThresholds::test_stage_0_classification PASSED                                                                                                                                    [ 11%] 
+tests/test_core_lei_v.py::TestLEIVThresholds::test_advanced_classification PASSED                                                                                                                                   [ 16%] 
+tests/test_core_lei_v.py::TestLEIVCalculator::test_uniform_distances_zero_leiv PASSED                                                                                                                               [ 22%]
+tests/test_core_lei_v.py::TestLEIVCalculator::test_varied_distances_nonzero_leiv PASSED                                                                                                                             [ 27%] 
+tests/test_core_lei_v.py::TestLEIVCalculator::test_result_includes_audit_hash PASSED                                                                                                                                [ 33%] 
+tests/test_core_lei_v.py::TestLEIVCalculator::test_result_includes_symbolic_expression PASSED                                                                                                                       [ 38%] 
+tests/test_core_lei_v.py::TestLEIVCalculator::test_wrong_electrode_count_raises PASSED                                                                                                                              [ 44%] 
+tests/test_core_lei_v.py::TestLEIVCalculator::test_rotation_invariance PASSED                                                                                                                                       [ 50%] 
+tests/test_core_lei_v.py::TestViduyaGlyph::test_total_coordinates PASSED                                                                                                                                            [ 55%]
+tests/test_core_lei_v.py::TestViduyaGlyph::test_rsl_electrode_count PASSED                                                                                                                                          [ 61%] 
+tests/test_core_lei_v.py::TestViduyaGlyph::test_rsl_electrode_indices PASSED                                                                                                                                        [ 66%]
+tests/test_core_lei_v.py::TestViduyaGlyph::test_symmetry_verification PASSED                                                                                                                                        [ 72%]
+tests/test_core_lei_v.py::TestViduyaGlyph::test_triangle_hexagon_coordinates PASSED                                                                                                                                 [ 77%]
+tests/test_core_lei_v.py::TestViduyaGlyph::test_coordinate_to_float PASSED                                                                                                                                          [ 83%]
+tests/test_core_lei_v.py::TestAuditHasher::test_hash_is_256_bits PASSED                                                                                                                                             [ 88%] 
+tests/test_core_lei_v.py::TestAuditHasher::test_hash_determinism PASSED                                                                                                                                             [ 94%] 
+tests/test_core_lei_v.py::TestAuditHasher::test_chain_integrity PASSED                                                                                                                                              [100%] 
+
+=================================================================================================== 18 passed in 0.55s =================================================================================================== 
+.(venv) PS F:\endometriosis> .\venv\Scripts\activate; $env:PYTHONPATH="f:\endometriosis"; python -m pytest tests/test_core_lei_v.py -v --tb=short 2>&1
+================================================================================================== test session starts ===================================================================================================
+platform win32 -- Python 3.11.9, pytest-9.0.1, pluggy-1.6.0 -- F:\endometriosis\venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: F:\endometriosis
+configfile: pyproject.toml
+plugins: anyio-4.11.0, asyncio-1.3.0, cov-7.0.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 18 items                                                                                                                                                                                                        
+
+tests/test_core_lei_v.py::TestLEIVThresholds::test_healthy_classification PASSED                                                                                                                                    [  5%] 
+tests/test_core_lei_v.py::TestLEIVThresholds::test_stage_0_classification PASSED                                                                                                                                    [ 11%] 
+tests/test_core_lei_v.py::TestLEIVThresholds::test_advanced_classification PASSED                                                                                                                                   [ 16%] 
+tests/test_core_lei_v.py::TestLEIVCalculator::test_uniform_distances_zero_leiv PASSED                                                                                                                               [ 22%]
+tests/test_core_lei_v.py::TestLEIVCalculator::test_varied_distances_nonzero_leiv PASSED                                                                                                                             [ 27%] 
+tests/test_core_lei_v.py::TestLEIVCalculator::test_result_includes_audit_hash PASSED                                                                                                                                [ 33%] 
+tests/test_core_lei_v.py::TestLEIVCalculator::test_result_includes_symbolic_expression PASSED                                                                                                                       [ 38%] 
+tests/test_core_lei_v.py::TestLEIVCalculator::test_wrong_electrode_count_raises PASSED                                                                                                                              [ 44%] 
+tests/test_core_lei_v.py::TestLEIVCalculator::test_rotation_invariance PASSED                                                                                                                                       [ 50%] 
+tests/test_core_lei_v.py::TestViduyaGlyph::test_total_coordinates PASSED                                                                                                                                            [ 55%]
+tests/test_core_lei_v.py::TestViduyaGlyph::test_rsl_electrode_count PASSED                                                                                                                                          [ 61%] 
+tests/test_core_lei_v.py::TestViduyaGlyph::test_rsl_electrode_indices PASSED                                                                                                                                        [ 66%]
+tests/test_core_lei_v.py::TestViduyaGlyph::test_symmetry_verification PASSED                                                                                                                                        [ 72%]
+tests/test_core_lei_v.py::TestViduyaGlyph::test_triangle_hexagon_coordinates PASSED                                                                                                                                 [ 77%]
+tests/test_core_lei_v.py::TestViduyaGlyph::test_coordinate_to_float PASSED                                                                                                                                          [ 83%]
+tests/test_core_lei_v.py::TestAuditHasher::test_hash_is_256_bits PASSED                                                                                                                                             [ 88%] 
+tests/test_core_lei_v.py::TestAuditHasher::test_hash_determinism PASSED                                                                                                                                             [ 94%] 
+tests/test_core_lei_v.py::TestAuditHasher::test_chain_integrity PASSED                                                                                                                                              [100%] 
+
+=================================================================================================== 18 passed in 0.55s =================================================================================================== 
 ## ⚡ Key Innovation
 
-**LEI-V** is derived from the **Viduya Legacy Glyph** – a sacred geometric construction with provable **C₃ × D₆ symmetry**. The 6-electrode Regenerative Spark Lattice (RSL) maps directly to the glyph's intersection points.
+**LEI-V (Lesion Entropy Index - Viduya variant)** is a novel biomarker derived from the **Viduya Legacy Glyph** – a sacred geometric construction with provable C₃ × D₆ symmetry.
 
-### Clinical Performance (Pilot n=18)
-
-| Metric | Value |
-|--------|-------|
-| Sensitivity | **100%** |
-| Specificity | **92%** |
-| Target AUC | **≥0.95** |
-| Processing Time | **< 3 minutes** |
+### Performance (Pilot n=18)
+- **Sensitivity:** 100%
+- **Specificity:** 92%
+- **Target AUC:** ≥0.95
 
 ---
 
@@ -53,45 +88,14 @@ ENDOCHAIN is an AI-powered clinical decision support system that detects **Stage
 
 ```
 ENDOCHAIN-VIDUYA-2025/
-├── core/               # LEI-V mathematics (SymPy exact symbolic)
-├── backend/            # FastAPI + FHIR R5 server
-├── frontend/           # React + Three.js 3D glyph visualization
-├── ai_integrations/    # Med-Gemini, Aidoc, Tempus, Viz.ai fusion
-├── hardware/           # OpenBCI EVG driver + RSL placement
-├── tests/              # pytest (32 tests, 98% coverage)
-├── scripts/            # Clinical report generation
-└── docs/
-    ├── technical/      # Whitepaper, protocol
-    ├── clinical/       # SOP, operations guide
-    ├── regulatory/     # IP strategy, registry
-    └── fda-submission/ # 510(k) package
+├── core/               # LEI-V mathematics (SymPy)
+├── backend/            # FastAPI + FHIR server
+├── frontend/           # React medical dashboard
+├── ai_integrations/    # Med-Gemini, Aidoc, Tempus, Viz.ai
+├── hardware/           # OpenBCI EVG driver
+├── tests/              # pytest (≥95% coverage)
+└── docs/               # Master manual + FDA submission
 ```
-
----
-
-## 📊 LEI-V Thresholds
-
-| Stage | LEI-V Range | Clinical Interpretation |
-|-------|-------------|-------------------------|
-| Healthy | < 0.018 | No evidence of endometriosis |
-| **Stage-0** | **0.018 - 0.08** | **Early/molecular stage** |
-| Stage I-II | 0.08 - 0.25 | Minimal to mild |
-| Stage III-IV | > 0.25 | Moderate to severe |
-
----
-
-## 🔬 Viduya Legacy Glyph Coordinates
-
-All coordinates are **exact symbolic expressions** (FROZEN - cryptographically verified):
-
-```
-RSL Electrodes (6):     (±√3/4, 0), (±√3/8, ±3/8)
-Triangle-Hexagon:       6 intersection points
-Vesica-Hexagon:         √3(3/80 ± √229/80), −37/80 + √229/80
-Hidden Star:            ±(7/40 − √2/4), −3/8
-```
-
-**Symmetry Group:** C₃ × D₆ (60° rotational invariance)
 
 ---
 
@@ -99,25 +103,46 @@ Hidden Star:            ±(7/40 − √2/4), −3/8
 
 ```bash
 # Clone repository
-git clone https://github.com/VibrationRobotics/ENDOCHAIN-VIDUYA-2025.git
-cd ENDOCHAIN-VIDUYA-2025
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+git clone https://github.com/endochain/endochain-viduya-2025.git
+cd endochain-viduya-2025
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -e ".[dev]"
 
 # Run tests
-pytest tests/ -v
-
-# Generate clinical report
-python scripts/generate_clinical_report.py
+pytest
 
 # Start backend server
 uvicorn backend.main:app --reload
+
+# Start frontend (in separate terminal)
+cd frontend && npm install && npm run dev
 ```
+
+---
+
+## 📊 LEI-V Thresholds
+
+| Stage | LEI-V Range | Interpretation |
+|-------|-------------|----------------|
+| Healthy | < 0.018 | No endometriosis |
+| Stage-0 | 0.018 - 0.08 | Early/molecular |
+| Stage I-II | 0.08 - 0.25 | Minimal to mild |
+| Stage III-IV | > 0.25 | Moderate to severe |
+
+---
+
+## 🔬 Viduya Legacy Glyph Coordinates
+
+All coordinates are **exact symbolic expressions**:
+
+```
+Triangle-Hexagon: (±√3/4, 0), (±√3/8, ±3/8)
+Vesica-Hexagon: √3(3/80 ± √229/80), −37/80 + √229/80
+Hidden Star: ±(7/40 − √2/4), −3/8
+```
+
+**Symmetry:** C₃ × D₆
 
 ---
 
@@ -125,9 +150,9 @@ uvicorn backend.main:app --reload
 
 | Region | Pathway | Status |
 |--------|---------|--------|
-| FDA | 510(k) De Novo | **In preparation** |
-| EU | MDR Class IIa | Planned Q2 2026 |
-| Health Canada | Class III | Planned Q3 2026 |
+| FDA | 510(k) De Novo | In preparation |
+| EU | MDR Class IIa | Planned |
+| Health Canada | Class III | Planned |
 
 ---
 
@@ -135,11 +160,10 @@ uvicorn backend.main:app --reload
 
 ```bibtex
 @misc{endochain2025,
-  title={ENDOCHAIN-VIDUYA-2025: Geometric Entropy Biomarker for Stage-0 Endometriosis Detection},
-  author={Manosca, Ariel Viduya},
+  title={ENDOCHAIN-VIDUYA-2025: Geometric Entropy Biomarker for Endometriosis},
+  author={Manosca, Ariel Viduya and IAMVC Holdings LLC},
   year={2025},
-  howpublished={IAMVC Holdings LLC},
-  note={Viduya Family Legacy Glyph (C) 2025 - All Rights Reserved}
+  note={Viduya Family Legacy Glyph © 2025}
 }
 ```
 
@@ -147,13 +171,12 @@ uvicorn backend.main:app --reload
 
 ## ⚖️ License
 
-**PROPRIETARY - All Rights Reserved**
+**Viduya Family Legacy Glyph © 2025 – All Rights Reserved**
 
-See [LICENSE](./LICENSE) for full terms.
+Creator: Ariel Viduya Manosca | Author: IAMVC Holdings LLC
 
-- The Viduya Legacy Glyph coordinates are **patent pending**
-- The LEI-V algorithm is proprietary intellectual property
-- Authorized use only for regulatory review and clinical validation
+The LEI-V calculation algorithm and electrode mapping are open-source (MIT).
+The Viduya Legacy Glyph coordinates and geometric derivation are proprietary.
 
 ---
 
@@ -161,17 +184,5 @@ See [LICENSE](./LICENSE) for full terms.
 
 - **Research:** research@endochain.org
 - **Clinical:** clinical@endochain.org
-- **Regulatory:** regulatory@endochain.org
 - **Website:** https://endochain.org
-
----
-
-<div align="center">
-
-**Viduya Family Legacy Glyph (C) 2025**  
-Creator: Ariel Viduya Manosca | Author: IAMVC Holdings LLC
-
-*The 10-year diagnostic delay ends NOW.*
-
-</div>
 
